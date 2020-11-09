@@ -1,34 +1,61 @@
-$(document).ready(function() {
+// Superslides plugin - home images
+$(document).ready(function () {
 	$('#slides').superslides({
 		animation: 'fade',
 		play: 5000,
 		pagination: false,
 	})
 
+	// cmd window - home
 	const typed = new Typed(".typed", {
-		strings: ["Web Developer", "Javascript", "ReactJs", "NodeJs ^2000"],
+		strings: ["Javascript", "Node.js", "React.Js","React Native", "Web Developer ^3000"],
 		typeSpeed: 70,
 		backSpeed: 40,
 		loop: true,
 		startDelay: 1000,
 		cursorChar: '_',
+		smartBackspace: false
 
 	})
 
-	$('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
-    }
+
+	
+
+	// Navigation bar 
+	$(".down a").click(function(e) {
+		e.preventDefault();
+		let targetElement = $(this).attr("href")
+		let targetPosition = $(targetElement).offset().top
+		$("html, body").animate({ scrollTop: targetPosition - 50 }, 1000)
 	})
+
+	$("#navigation li a").click(function(e) {
+		e.preventDefault();
+		let targetElement = $(this).attr("href")
+		let targetPosition = $(targetElement).offset().top
+		$("html, body").animate({ scrollTop: targetPosition - 50 }, "slow")
+	})
+
+	$("#navigation a").click(function(e) {
+		e.preventDefault();
+		let targetElement = $(this).attr("href")
+		let targetPosition = $(targetElement).offset().top
+		$("html, body").animate({ scrollTop: targetPosition - 50 }, "slow")
+	})
+
+
+	const nav = $("#navigation")
+	const navTop = nav.offset().top
+
+	$(window).on("scroll", stickyNavigation)
+	function stickyNavigation() {
+		const body = $("body")
+		if ($(window).scrollTop() >= navTop) {
+			body.css("padding-top", nav.outerHeight() + "px")
+			body.addClass("fixedNav")
+		} else {
+			body.css("padding-top", 0)
+			body.removeClass("fixedNav")
+		}
+	}
 })
