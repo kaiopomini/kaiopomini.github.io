@@ -150,6 +150,10 @@ body{
 .card-container h3 {
     text-align: center;
 }
+.card-container h4 {
+    text-align: center;
+    font-size: 20px;
+}
 
 /* contact */
 
@@ -264,15 +268,17 @@ body{
     display: inline-block;
     border: 2px solid #5f27cd;
     border-radius: 30px;
+    width: 80px;
+    height: 40px;
     transition: 0.5s;
     
 }
 .card-projects-container .card-projects .content .button.preview{
-    right: 25%;
+    right: 20%;
 
 }
 .card-projects-container .card-projects .content .button.git{
-    left: 25%;
+    left: 20%;
 }
 .card-projects-container .card-projects .content .button:hover {
     text-decoration: none;
@@ -329,4 +335,21 @@ body{
     position: fixed;
     top: 0;
 
+}
+
+/* loader */
+.loader {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+}
+.loader .inner {
+    width: 100%;
+    height: 100%;
+    background: url(../img/loader.gif) center center no-repeat;
 }

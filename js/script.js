@@ -1,3 +1,9 @@
+$(window).on('load', function() {
+	$('.loader .inner').fadeOut(500, function() {
+		$('.loader').fadeOut(750)
+	})
+})
+
 // Superslides plugin - home images
 $(document).ready(function () {
 	$('#slides').superslides({
